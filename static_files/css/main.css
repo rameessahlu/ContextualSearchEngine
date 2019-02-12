@@ -1,0 +1,242 @@
+*{
+	margin:0;
+	padding: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body{
+	background-color: #eee;
+}
+header{
+	background-image: url('../images/fox-tail-header.png');
+	background-size: 110%;
+	background-position: 0 50%;
+	background-color: #fff;
+	height: 10em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header>div{
+	width: 40%;
+	height: 3.5em;
+	position: relative;
+}
+header>div>input{
+	height: 100%;
+	width: 100%;
+	padding: 0.5em 5.5em 0.5em 1em;
+	border: 1px solid #aaa;
+	border-radius: 1.5em;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+header>div>button{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 5em;
+	border: 1px solid #aaa;
+	border-radius: 0 1.5em 1.5em 0;
+}
+section{
+	
+}
+.search_cont{
+	
+}
+.search_tabs{
+	display: flex;
+	justify-content: center;
+}
+.tab_cont{
+	background-color: #fff;
+	box-shadow: 0 -5px 10px rgba(0,0,0,0.2);
+	height: 3em;
+	width: 10em;
+	margin-top: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-duration: .3s;
+	cursor: pointer;
+}
+.tab_cont:first-child{
+	border-right: 1px solid #aaa;
+}
+.tab_cont:hover{
+	border-bottom: 4px solid #009;
+}
+.tab_cont>*{
+	font-size: 1.5em;
+}
+.search_cont:last-child{
+	position: relative;
+	margin: 0 2em;
+	min-height: 30em;
+}
+.search_result_cont{
+	box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+	background-color: #fff;
+	min-height: 30em;
+	width: 100%;
+	padding: 2em 3em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+}
+.search_result_cont:first-child{
+	
+}
+.result_Card,.image_result_Card{
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+	min-height: 10em;
+	display:flex;
+	background-image: linear-gradient(to bottom, #fff,#ddd);
+	margin-bottom: 1em;
+}
+.card_sub_cont{
+	
+}
+.card_image_cont{
+	width: 10%;
+	display: flex;
+	justify-content: center;
+	align-items:flex-start;
+}
+.card_image_cont>img{
+	width: 60%;
+	height: 50%;
+	max-height: 5em;
+	margin-top: 2.5em;
+}
+.card_detail_cont{
+	width: 90%;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1em 5em;
+}
+.card_detail_cont>h3{
+	margin-bottom: .2em;
+	font-weight: normal;
+}
+.card_detail_cont>h4{
+	margin-bottom: .5em;
+	font-weight: normal;
+	font-size: .8em;
+}
+.file_path{
+	position: absolute;
+	top: 1em;
+	right: 5em;
+	text-align: center;
+	padding: .6em;
+	width: 10em;
+	background-color: #0a0;
+	color: #fff;
+}
+
+.search_text_cont{
+	background-color: #fff;
+	padding: .5em;
+	margin: .5em 0;
+	max-height: 10em;
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+	overflow-y: auto;
+}
+.upper{
+	background-color: #eee;
+}
+.search_text_cont>button{
+	height: 3em;
+	padding: .5em;
+}
+.search_text_cont>p{
+	padding: .2em;
+	text-transform:capitalize;
+	line-height: 1.5em;
+}
+.lower{
+	background-color: #eee;
+}
+.image_result_cont{
+	display: flex;
+	flex-wrap:wrap ;
+	justify-content:space-evenly;
+}
+.image_result_Card{
+	width: 20em;
+	height: 25em;
+	margin: 0 2em 2em 0;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-image: none;
+}
+.image_card_sub_cont{
+	
+}
+.image_card_image_cont{
+	width: 100%;
+	height: 75%;
+}
+.image_card_image_cont>img{
+	background-color: #aaa;
+	height: 100%;
+	width: 100%;
+}
+.image_card_detail_cont{
+	height: 25%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(to bottom, #fff,#ddd);
+}
+.image_card_detail_cont>div:first-child{
+	height: 100%;
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.image_card_detail_cont>div:last-child{
+	padding: .5em .5em;
+	height: 100%;
+	width: 80%;
+}
+.image_card_detail_cont>div>img{
+	height: 60%;
+	width: 80%;
+}
+.image_card_detail_cont>div>h3{
+	overflow-x: hidden;
+	font-weight: normal;
+	font-size: 1.1em;
+	text-overflow:ellipsis;
+}
+.image_card_detail_cont>div>h4{
+	overflow-x: hidden;
+	font-weight: normal;
+	font-size: .9em;
+	text-overflow:ellipsis;
+}
+.loader{
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.loader>img{
+	width: 5em;
+}

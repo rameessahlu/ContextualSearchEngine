@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Context Search Engine</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		var icon={
+			'.csv':'images/icon-csv.png',
+			'.pdf':'images/icon-pdf.png',
+			'.pptx':'images/icon-ppt.png',
+			'.txt':'images/icon-txt.png',
+			'.docx':'images/icon-word.png',
+			'.xls':'images/icon-xls.png',
+			'.xlsx':'images/icon-xls.png'
+		};
+
+		var imglist=[]
+
+		var univ={
+			image_tab_detach:true,
+			text_tab_detach:true,
+			data:null
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<div>
+			<input type="text" name="searchtext" id="searchtext">
+			<button id="hitSearch">Search</button>
+		</div>
+	</header>
+	<section>
+		<div class="search_cont search_tabs">
+			<div class="tab_cont" id="text_tab">
+				<span>Text</span>
+			</div>
+			<div class="tab_cont" id="image_tab">
+				<span>Image</span>
+			</div>
+		</div>
+		<div class="search_cont">
+			<div class="search_result_cont text_result_cont">
+				<!-- <div class="result_Card">
+					<div class="card_sub_cont card_image_cont">
+						<img src="images/icon-ppt.png">
+					</div>
+					<div class="card_sub_cont card_detail_cont">
+						<h3>File Name</h3>
+						<h4>File Path</h4>
+						<a href="#" class="file_path">Open File</a>
+						<div class="search_text_cont">
+							<p class="upper">Upper Part Text</p>
+							<button class="upper_but">Show Upper Part</button>
+							<p class="main_text">Content from the file</p>
+							<button class="lower_but">Show Lower Part</button>
+							<p class="lower">Lower Part Text</p>
+						</div>
+					</div>
+				</div>
+ -->			</div>
+			<div class="search_result_cont image_result_cont">
+				<!-- <div class="image_result_Card">
+					<div class="image_card_sub_cont image_card_image_cont">
+						<img src="#">
+					</div>
+					<div class="image_card_sub_cont image_card_detail_cont">
+						<div>
+							<img src="#">
+						</div>
+						<div>
+							<h3>File Name</h3>
+							<h4>File Path</h4>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+	<div class="loader">
+		<img src="images/loader.gif">
+	</div>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.loader').hide();
+			$('.image_result_cont').hide();
+
+			// $('.upper_but').on('click',function(){
+			// 	console.log($(this));
+			// });
+
+			// $('.lower_but').on('click',function(){
+			// 	console.log($(this));
+			// });
+
+			$('#text_tab').on('click',function(){
+				$('.image_result_cont').hide();
+				$('.text_result_cont').show();				
+			});
+
+			$('#image_tab').on('click',function(){
+				$('.text_result_cont').hide();
+				$('.image_result_cont').show();
+				processImageTab();
+			});
+
+			$('#hitSearch').on('click',function(){
+
+				$('.loader').show();
+
+				univ.image_tab_detach=true;
+				univ.text_tab_detach=true;
+
+				imglist=[];
+
+				$(".image_result_cont>.image_result_Card").detach();
+
+				var query=$('#searchtext').val().trim();
+				requestAjax({data:{'query':query}});
+			});
+		});
+	</script>
+</body>
+</html>

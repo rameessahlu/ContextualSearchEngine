@@ -1,0 +1,4 @@
+*.pyc
+/output/*
+/.idea/*
+/image_classifier/data_set/*
