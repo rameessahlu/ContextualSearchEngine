@@ -1,6 +1,6 @@
 import json, os, random
 import time, datetime
-from classifier import PreProcessor as pp
+from classifier import pre_processor as pp
 from . import common as c
 
 class ContextSearch:
@@ -12,9 +12,10 @@ class ContextSearch:
     def log_es_response(self, _relavance_score):
         log_file_name = datetime.datetime.fromtimestamp(time.time()).strftime('%Y%m%d%H%M%S')
         salt  = str(random.randint(1, 1000))
-        print('DEBUG# random_no: {}'.format(salt))
+        #print('DEBUG# random_no: {}'.format(salt))
         with open(os.path.join(self.es_response_dir, log_file_name + salt + r'.json'), "w") as file:
             file.write(json.dumps(_relavance_score, sort_keys=True, indent=4))
+        print(self.es_response_dir, log_file_name + salt + r'.json')
         return
     
     def context_based_query(self):

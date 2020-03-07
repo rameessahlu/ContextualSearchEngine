@@ -1,6 +1,6 @@
-from metadata import MetadataCreator
+from metadata import metadata_generator
 from metadata import constants
-from classifier import CreateNaiveBayesModel as NBM
+from classifier import create_naive_bayes_model as NBM
 from indexing import tag_search
 from indexing import context_search
 from api import elastic_search
@@ -62,7 +62,7 @@ class Initialize:
         #pprint(fi.es.search(index='cse',  doc_type='file_meta_data',
     
     def metadata_creation(self):
-        md_c = MetadataCreator.MetadataCreator(self.output_dir, self.data_dir, self.metadata_dir, self.img_dir)
+        md_c = metadata_generator.MetadataGenerator(self.output_dir, self.data_dir, self.metadata_dir, self.img_dir)
         if not os.listdir(self.metadata_dir): 
             md_c.generate_files_metadata()
     
@@ -85,6 +85,7 @@ if __name__ == '__main__':
     es = Elasticsearch(
         scheme="http",
         port=9200,
+        http_auth=(constants.es_username, constants.es_password)
     )
     fi = elastic_search.FileIndex(es, constants)
     init.es_indexing(fi, es)

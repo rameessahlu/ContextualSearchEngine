@@ -4,8 +4,8 @@ import json
 import shutil
 from elasticsearch import Elasticsearch
 from api import elastic_search
-from metadata import CSEfilesScanner as cse
-from classifier import PreProcessor as pp
+from metadata import CSEfiles_scanner as cse
+from classifier import pre_processor as pp
 from metadata import constants
 import nltk
 import time

@@ -2,18 +2,18 @@
 <html>
 <head>
 	<title>Context Search Engine</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
 
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/jquery.js') }}"></script>
 	<script type="text/javascript">
 		var icon={
-			'.csv':'images/icon-csv.png',
-			'.pdf':'images/icon-pdf.png',
-			'.pptx':'images/icon-ppt.png',
-			'.txt':'images/icon-txt.png',
-			'.docx':'images/icon-word.png',
-			'.xls':'images/icon-xls.png',
-			'.xlsx':'images/icon-xls.png'
+			'.csv':'../static/images/icon-csv.png',
+			'.pdf':'../static/images/icon-pdf.png',
+			'.pptx':'../static/images/icon-ppt.png',
+			'.txt':'../static/images/icon-txt.png',
+			'.docx':'../static/images/icon-word.png',
+			'.xls':'../static/images/icon-xls.png',
+			'.xlsx':'../static/images/icon-xls.png'
 		};
 
 		var imglist=[]
@@ -80,9 +80,9 @@
 		</div>
 	</section>
 	<div class="loader">
-		<img src="images/loader.gif">
+		<img src="{{ url_for('static',filename='images/loader.gif') }}">
 	</div>
-	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/ajax.js') }}"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('.loader').hide();

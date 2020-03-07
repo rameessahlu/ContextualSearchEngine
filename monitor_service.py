@@ -9,9 +9,9 @@ import sys
 import os
 #from MonitorManager import MetaMonitor
 
-# pathexe = r"D:/dist/serviceweb.exe"
+# pathexe = r"serviceweb.exe"
 logging.basicConfig(
-    filename='D:\\dist\\hello-service.log',
+    filename='test-service.log',
     level=logging.DEBUG,
     format='[helloworld-service] %(levelname)-7.7s %(message)s'
 )

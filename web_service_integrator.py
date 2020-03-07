@@ -13,9 +13,9 @@ import win32com.client
 import  random
 from elasticsearch import Elasticsearch
 from api import elastic_search
-from classifier import PreProcessor as pp
+from classifier import pre_processor as pp
 from metadata import constants
-from image_classifier import img_classifier as ic
+#from image_classifier import img_classifier as ic
 
 def createSubQueryList(tokens, token_type='bigram', clause_type='must'):
         sub_query_list = []
@@ -32,6 +32,7 @@ def createSession():
     es = Elasticsearch(
         scheme="http",
         port=9200,
+        http_auth=(constants.es_username, constants.es_password)
     )
     return elastic_search.FileIndex(es, constants)
 

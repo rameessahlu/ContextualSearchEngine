@@ -1,2 +1,4 @@
 CSEindex = 'cse'
-CSEdoc_type = 'file_meta_data'
+CSEdoc_type = '_doc'
+es_username = 'elastic'
+es_password = '123456'

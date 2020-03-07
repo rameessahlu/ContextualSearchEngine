@@ -16,12 +16,12 @@ Requirements:
 
 Quick Instruction:
 * install java-9
-* install elasticsearch
+* install elasticsearch and set credential
 * place documents of your choice on data folder
 * on the command line, enter:
 ```console
    C:\Users\<user>\workspace>bin/elasticsearch.bat
-   C:\Users\<user>\workspace>python Initialize.py
+   C:\Users\<user>\workspace>python initialize_search_index.py
    C:\Users\<user>\workspace>python web_service.py
 ```
 * open /static_files/index.html

@@ -2,12 +2,12 @@
 # coding: utf-8
 
 import os, json
-from . import CSEfilesScanner as cse
+from . import CSEfiles_scanner as cse
 from . import constants
-from classifier import PreProcessor as pp
+from classifier import pre_processor as pp
 import nltk
 
-class MetadataCreator:
+class MetadataGenerator:
     output_directory = ''
     output_filename = 'fList.json'
     data_directory = ''
